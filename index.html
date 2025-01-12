@@ -10,7 +10,7 @@
             border-collapse: collapse;
         }
         th, td {
-            width: 160px;
+            width: 120px;
             height: 60px;
             border: 1px solid black;
             text-align: center;
@@ -46,6 +46,30 @@
         .entornos {
             background-color: #cccccc;
         }
+
+        @media (max-width: 768px) {
+        table, thead, tbody, th, td, tr {
+            display: block;
+        }
+        thead tr {
+            display: none; /* Ocultar encabezados en móviles */
+        }
+        tr {
+            margin-bottom: 10px;
+        }
+        td {
+            text-align: left;
+            padding: 10px;
+            border: 1px solid #ddd;
+            position: relative;
+        }
+        td:before {
+            content: attr(data-label); /* Mostrar el encabezado */
+            position: absolute;
+            left: 10px;
+            font-weight: bold;
+        }
+    }
     </style>
 </head>
 <body>
